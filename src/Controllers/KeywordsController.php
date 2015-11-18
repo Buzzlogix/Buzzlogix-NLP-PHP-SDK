@@ -11,7 +11,7 @@ use BuzzlogixTextAnalysisAPILib\APIException;
 use BuzzlogixTextAnalysisAPILib\APIHelper;
 use BuzzlogixTextAnalysisAPILib\Configuration;
 use Unirest\Unirest;
-class SentimentController {
+class KeywordsController {
 
     /* private fields for configuration */
 
@@ -33,14 +33,14 @@ class SentimentController {
      * The text should be provided as text/plain in the body
      * @param  string     $body     Required parameter: Supply text to be classified.
      * @return mixed response from the API call*/
-    public function createReturnEnglishGeneralSentiment (
+    public function createReturnEnglishKeywords (
                 $body) 
     {
         //the base uri for api requests
         $queryBuilder = Configuration::$BASEURI;
         
         //prepare query string for API call
-        $queryBuilder = $queryBuilder.'/sentiment';
+        $queryBuilder = $queryBuilder.'/keywords';
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -80,16 +80,18 @@ class SentimentController {
         
     /**
      * The text should be provided as multipart/form-data with the key 'text'. Files can be uploaded.
-     * @param  string     $body     Required parameter: Supply text to be classified.
+     * @param  string     $apikey     Required parameter: Supply your API key.
+     * @param  string     $body       Required parameter: Supply text to be classified.
      * @return mixed response from the API call*/
-    public function createReturnEnglishGeneralSentimentForm (
+    public function createReturnEnglishKeywordsForm (
+                $apikey,
                 $body) 
     {
         //the base uri for api requests
         $queryBuilder = Configuration::$BASEURI;
         
         //prepare query string for API call
-        $queryBuilder = $queryBuilder.'/sentiment/form';
+        $queryBuilder = $queryBuilder.'/keywords/form';
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -98,7 +100,8 @@ class SentimentController {
         $headers = array (
             'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
-            'apikey' => $this->apikey
+            'apikey' => $this->apikey,
+            'apikey'          => $apikey
         );
 
         //prepare API request

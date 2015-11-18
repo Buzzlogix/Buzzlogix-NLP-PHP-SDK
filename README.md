@@ -22,7 +22,7 @@ For using this SDK do the following:
     2. Use composer to install the dependencies. Usually this can be done through a 
        context menu command "Instal (dev)".
     3. Import classes from your file in your code where needed for example,
-           use BuzzlogixTextAnalysisAPILib\Controllers\ObjectivityController;
+           use BuzzlogixTextAnalysisAPILib\Controllers\TwittersentimentController;
    
         
     4. You can now instantiate controllers and call the respective methods.

@@ -2,7 +2,7 @@
 /*
  * BuzzlogixTextAnalysisAPILib
  *
- * This file was automatically generated for Buzzlogix by APIMATIC BETA v2.0 on 11/18/2015
+ * This file was automatically generated for buzzlogix by APIMATIC BETA v2.0 on 11/25/2015
  */
 
 namespace BuzzlogixTextAnalysisAPILib\Controllers;
@@ -80,11 +80,9 @@ class KeywordsController {
         
     /**
      * The text should be provided as multipart/form-data with the key 'text'. Files can be uploaded.
-     * @param  string     $apikey     Required parameter: Supply your API key.
-     * @param  string     $body       Required parameter: Supply text to be classified.
+     * @param  string     $body     Required parameter: Supply text to be classified.
      * @return mixed response from the API call*/
     public function createReturnEnglishKeywordsForm (
-                $apikey,
                 $body) 
     {
         //the base uri for api requests
@@ -100,8 +98,7 @@ class KeywordsController {
         $headers = array (
             'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
-            'apikey' => $this->apikey,
-            'apikey'          => $apikey
+            'apikey' => $this->apikey
         );
 
         //prepare API request

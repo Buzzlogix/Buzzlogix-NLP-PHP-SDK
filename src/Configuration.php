@@ -2,17 +2,17 @@
 /*
  * BuzzlogixTextAnalysisAPILib
  *
- * This file was automatically generated for buzzlogix by APIMATIC BETA v2.0 on 11/25/2015
+ * This file was automatically generated for buzzlogix by APIMATIC BETA v2.0 on 12/06/2015
  */
 
 namespace BuzzlogixTextAnalysisAPILib;
 
 class Configuration {
     //The base Uri for API calls
-    public static $BASEURI = 'http://text.buzzlogix.com:8000';
+    public static $BASEURI = 'https://buzzlogix-text-analysis.p.mashape.com';
 
     //Supply your API Key. 
-    //TODO: Replace the $apikey with an appropriate value
-    public static $apikey = 'TODO: Replace';
+    //TODO: Replace the $xMashapeKey with an appropriate value
+    public static $xMashapeKey = 'TODO: Replace';
 
 }
